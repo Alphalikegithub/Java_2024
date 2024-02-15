@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Java_2024.iml" filepath="$PROJECT_DIR$/Java_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/html/html.iml" filepath="$PROJECT_DIR$/html/html.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part10-object/part10-object.iml" filepath="$PROJECT_DIR$/part10-object/part10-object.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part2-method/part2-method.iml" filepath="$PROJECT_DIR$/part2-method/part2-method.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part3-junit/part3-junit.iml" filepath="$PROJECT_DIR$/part3-junit/part3-junit.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part4-debug/part4-debug.iml" filepath="$PROJECT_DIR$/part4-debug/part4-debug.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part5-array/part5-array.iml" filepath="$PROJECT_DIR$/part5-array/part5-array.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part6-recursion/part6-recursion.iml" filepath="$PROJECT_DIR$/part6-recursion/part6-recursion.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part7-oop1/part7-oop1.iml" filepath="$PROJECT_DIR$/part7-oop1/part7-oop1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part8-oop2/part8-oop2.iml" filepath="$PROJECT_DIR$/part8-oop2/part8-oop2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part9-oop3/part9-oop3.iml" filepath="$PROJECT_DIR$/part9-oop3/part9-oop3.iml" />
+    </modules>
+  </component>
+</project>

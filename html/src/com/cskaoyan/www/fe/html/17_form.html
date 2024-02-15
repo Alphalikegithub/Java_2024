@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<form>表单, 用来在浏览器的网页上, 通过用户输入或者点击, 生成一个url, 让浏览器根据这个url发起请求。-->
+<!--  用于采集用户输入的数据的，用于和服务器进行交互。比如登录页面，注册页面。-->
+<!--  // url分为四部分: 协议,  域名or ip+端口,   服务器内部路径,   参数-->
+
+<!--  属性：-->
+<!--  action: 指定提交数据的URL-->
+<!--  method：指定提交方式-->
+<!--  分类：一共七种，常用的两种，get post-->
+
+<!--  https://www.baidu.com/s?wd=java-->
+<!--// 在一个form表单中可以生成一个url给浏览器, 让浏览器根据这个生成的url发起请求-->
+<!--// url分为四部分: 协议,  域名or ip+端口,   服务器内部路径,   参数-->
+
+<!--// 1, 在action参数，需要写前三部分（协议 域名或者  ip+端口   服务器内部路径。）-->
+<!--// 2, 在form标签里面，我们需要写表单元素。表单元素的内容会作为参数提交。-->
+<!--//    表单构成的key-value数据:  key的构成是由表单元素的name属性构成,  value是由表单元素的value属性构成(表单元素的value又是用户在表单元素上输入/选择的内容)-->
+
+<!--<form action="https://s.taobao.com/search" method="get">-->
+<!--  <input name="q">-->
+
+<!--  <input type="submit">-->
+<!--</form>-->
+
+<form action="https://s.taobao.com/search" method="get">
+    <input name = "q">
+    <input type="submit">
+</form>
+<!--//get和post的区别:-->
+<!--// 1, get请求'一般'把请求参数放到url之后, POST请求'一般'把参数放到请求正文里-->
+<!--//      url之后拼接参数最多1kb-->
+<!--// 2, get请求不安全,  post请求相对安全一些。-->
+<!--// 如果，我直接用get请求来发送用户名和密码。密码会出现在url上面，我们能看到这个密码，不安全。-->
+<!--// 3, 语义化区别,  get请求一般用来获取数据,  post请求一般用来提交数据-->
+</body>
+</html>
