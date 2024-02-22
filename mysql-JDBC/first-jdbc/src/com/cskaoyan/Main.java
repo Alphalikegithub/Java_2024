@@ -2,12 +2,11 @@ package com.cskaoyan;
 
 
 
-import com.mysql.cj.jdbc.Driver;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
+
+import java.sql.*;
+import java.util.Properties;
+import java.util.logging.Logger;
 
 /**
  * @program: first-jdbc
@@ -21,7 +20,42 @@ public class Main {
     static String password = "root";
     public static void main(String[] args) throws SQLException {
         //0.注册驱动(加载驱动程序)
-        DriverManager.registerDriver(new Driver());
+        DriverManager.registerDriver(new Driver() {
+            @Override
+            public Connection connect(String url, Properties info) throws SQLException {
+                return null;
+            }
+
+            @Override
+            public boolean acceptsURL(String url) throws SQLException {
+                return false;
+            }
+
+            @Override
+            public DriverPropertyInfo[] getPropertyInfo(String url, Properties info) throws SQLException {
+                return new DriverPropertyInfo[0];
+            }
+
+            @Override
+            public int getMajorVersion() {
+                return 0;
+            }
+
+            @Override
+            public int getMinorVersion() {
+                return 0;
+            }
+
+            @Override
+            public boolean jdbcCompliant() {
+                return false;
+            }
+
+            @Override
+            public Logger getParentLogger() throws SQLFeatureNotSupportedException {
+                return null;
+            }
+        });
         //1.建立网络连接
         Connection connection = DriverManager.getConnection(url,username,password);
         //2.发送SQL语句
