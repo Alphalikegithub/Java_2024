@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java_2024.iml" filepath="$PROJECT_DIR$/Java_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MySQL-JDBC.iml" filepath="$PROJECT_DIR$/MySQL-JDBC.iml" />
       <module fileurl="file://$PROJECT_DIR$/html/html.iml" filepath="$PROJECT_DIR$/html/html.iml" />
       <module fileurl="file://$PROJECT_DIR$/part10-object/part10-object.iml" filepath="$PROJECT_DIR$/part10-object/part10-object.iml" />
       <module fileurl="file://$PROJECT_DIR$/part2-method/part2-method.iml" filepath="$PROJECT_DIR$/part2-method/part2-method.iml" />
