@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            margin-bottom: 5px;
+        }
+        td{
+            width: 200px;
+            height: 25px;
+            text-align: center;
+        }
+        [colspan]{
+            background: cyan;
+        }
+        select,button{
+            height: 30px;
+        }
+        input{
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <select>
+        <option>美元</option>
+        <option>人民币</option>
+    </select>
+    <button>互换</button>
+    <select>
+        <option>美元</option>
+        <option>人民币</option>
+    </select>
+    <span>
+        数额：
+    </span>
+    <input>
+    <button>汇率换算</button>
+</div>
+<table border="1">
+    <tr>
+        <td colspan="3">按当前汇率换算结果</td>
+    </tr>
+    <tr>
+        <td>美元</td>
+        <td>汇率</td>
+        <td>人民币</td>
+    </tr>
+    <tr>
+        <td>100</td>
+        <td>6</td>
+        <td>600</td>
+    </tr>
+</table>
+</body>
+</html>
