@@ -2,6 +2,10 @@ package com.cskaoyan.javase.string;
 
 import org.junit.Test;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * @program: Java_2024
  * @description: StringBufferTest测试
@@ -31,7 +35,19 @@ public class StringBufferTest {
         //反转功能
         buffer.reverse();
         System.out.println(buffer);
+    }
 
+    @Test
+    public void myTest2() throws ParseException {
+        Date date = new Date();
+        System.out.println(date);
+        //
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println(simpleDateFormat.format(date));
 
+        //字符串转日期
+        String s = "2024/02/29 19:48:00";
+        Date date1 = simpleDateFormat.parse(s);
+        System.out.println(date1);
     }
 }
