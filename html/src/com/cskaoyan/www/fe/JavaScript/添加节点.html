@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<Ul>
+  <li>aa</li>
+  <li>bb</li>
+  <li>cc</li>
+  <li>dd</li>
+</Ul>
+<input id = "inputstr">0
+<button onclick="addli()">添加</button>
+<script>
+  function addli(){
+    // var inputNode = document.getElementById("inputstr")
+    // console.log(inputNode.value)
+    // alert(inputNode.value)
+    //获得用户的输入节点
+    var inputNode = document.getElementById("inputstr")
+    //获得ul节点
+    var ulNode = document.getElementById("ul1")
+    //创建一个文本结点
+    var textNode = document.createTextNode(inputNode.value)
+    //创建一个li结点
+    var liNode = document.createElement("li")
+    liNode.appendChild(textNode)
+    ulNode.appendChild(liNode)
+  }
+
+
+
+</script>
+</body>
+</html>
