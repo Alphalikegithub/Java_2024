@@ -7,6 +7,8 @@
       <module fileurl="file://$PROJECT_DIR$/part10-object/part10-object.iml" filepath="$PROJECT_DIR$/part10-object/part10-object.iml" />
       <module fileurl="file://$PROJECT_DIR$/part11-string.iml" filepath="$PROJECT_DIR$/part11-string.iml" />
       <module fileurl="file://$PROJECT_DIR$/part12-exception/part12-exception.iml" filepath="$PROJECT_DIR$/part12-exception/part12-exception.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part13-file/part13-file.iml" filepath="$PROJECT_DIR$/part13-file/part13-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part16-network/part16-network.iml" filepath="$PROJECT_DIR$/part16-network/part16-network.iml" />
       <module fileurl="file://$PROJECT_DIR$/part2-method/part2-method.iml" filepath="$PROJECT_DIR$/part2-method/part2-method.iml" />
       <module fileurl="file://$PROJECT_DIR$/part3-junit/part3-junit.iml" filepath="$PROJECT_DIR$/part3-junit/part3-junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/part4-debug/part4-debug.iml" filepath="$PROJECT_DIR$/part4-debug/part4-debug.iml" />
