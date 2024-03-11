@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="part11-string" />
+        <module name="part15-thread" />
         <module name="mysql-JDBC" />
       </profile>
     </annotationProcessing>
