@@ -39,5 +39,8 @@ public class Demo4 {
         //获取类型
         Class<?> type = nameField.getType();
         System.out.println(type);
+
+        //查看类加载器
+        System.out.println(personClass.getClassLoader());
     }
 }

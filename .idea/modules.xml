@@ -11,6 +11,7 @@
       <module fileurl="file://$PROJECT_DIR$/part14-IO/part14-IO.iml" filepath="$PROJECT_DIR$/part14-IO/part14-IO.iml" />
       <module fileurl="file://$PROJECT_DIR$/part16-network/part16-network.iml" filepath="$PROJECT_DIR$/part16-network/part16-network.iml" />
       <module fileurl="file://$PROJECT_DIR$/part17-reflect/part17-reflect.iml" filepath="$PROJECT_DIR$/part17-reflect/part17-reflect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/part18-annotation/part18-annotation.iml" filepath="$PROJECT_DIR$/part18-annotation/part18-annotation.iml" />
       <module fileurl="file://$PROJECT_DIR$/part2-method/part2-method.iml" filepath="$PROJECT_DIR$/part2-method/part2-method.iml" />
       <module fileurl="file://$PROJECT_DIR$/part3-junit/part3-junit.iml" filepath="$PROJECT_DIR$/part3-junit/part3-junit.iml" />
       <module fileurl="file://$PROJECT_DIR$/part4-debug/part4-debug.iml" filepath="$PROJECT_DIR$/part4-debug/part4-debug.iml" />
