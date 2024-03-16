@@ -30,5 +30,9 @@ public class Demo {
         String pwd = properties.getProperty("pwd");
         System.out.println(username);
         System.out.println(pwd);
+
+//        FileInputStream fileInputStream = new FileInputStream("a.txt");
     }
 }
+
+

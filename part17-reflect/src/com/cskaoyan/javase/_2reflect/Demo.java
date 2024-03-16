@@ -1,4 +1,4 @@
-package com.cskaoyan.java53th._0introduction;
+package com.cskaoyan.javase._2reflect;
 
 /**
  * 什么是反射?
@@ -51,7 +51,7 @@ public class Demo {
         Class integerClazz = Integer.class;
         System.out.println(intClazz == integerClazz);
 
-        Class stuClazz3 = Class.forName("com.cskaoyan.java53th._0introduction.Student");
+        Class stuClazz3 = Class.forName("com.cskaoyan.javase._2reflect.Student");
 
         System.out.println(stuClazz == stuClazz2);
         System.out.println(stuClazz == stuClazz3);

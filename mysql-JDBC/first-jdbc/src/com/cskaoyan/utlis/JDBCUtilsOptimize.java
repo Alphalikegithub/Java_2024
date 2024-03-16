@@ -28,7 +28,7 @@ public class JDBCUtilsOptimize {
             String driver;
             //读取配置文件
             Properties properties = new Properties();
-            FileInputStream fileInputStream = new FileInputStream("jdbc.properties");
+            FileInputStream fileInputStream = new FileInputStream("D:\\Java\\IdeaProjects\\Java_2024\\mysql-JDBC\\first-jdbc\\jdbc.properties");
             properties.load(fileInputStream);
 
             url = properties.getProperty("url");
