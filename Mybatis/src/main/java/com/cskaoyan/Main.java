@@ -8,7 +8,7 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.InputStream;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) {/*
 
         System.out.println("Hello world!");
         SqlSessionFactoryBuilder sqlSessionFactoryBuilder = new SqlSessionFactoryBuilder();
@@ -23,6 +23,7 @@ public class Main {
         User user1 = sqlSession.selectOne("cskaoyan.bbb",3);
         System.out.println(user1);
         //关闭sqlSession
-        sqlSession.close();
+        sqlSession.close();*/
     }
+
 }

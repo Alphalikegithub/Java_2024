@@ -10,6 +10,7 @@
         <module name="part15-thread" />
         <module name="mysql-JDBC" />
         <module name="Mybatis" />
+        <module name="Mybatis-dynamic-proxy" />
       </profile>
     </annotationProcessing>
   </component>
