@@ -9,9 +9,12 @@
         <module name="part11-string" />
         <module name="part15-thread" />
         <module name="mysql-JDBC" />
-        <module name="Mybatis" />
-        <module name="Mybatis-dynamic-proxy" />
+        <module name="jedis-demo" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Mybatis" target="1.8" />
+      <module name="Mybatis-dynamic-proxy" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

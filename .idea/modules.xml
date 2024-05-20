@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Java_2024.iml" filepath="$PROJECT_DIR$/Java_2024.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis/Mybatis.iml" filepath="$PROJECT_DIR$/Mybatis/Mybatis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Mybatis-dynamic-proxy.iml" filepath="$PROJECT_DIR$/Mybatis-dynamic-proxy.iml" />
       <module fileurl="file://$PROJECT_DIR$/html/html.iml" filepath="$PROJECT_DIR$/html/html.iml" />
       <module fileurl="file://$PROJECT_DIR$/part1-basic/part1-basic.iml" filepath="$PROJECT_DIR$/part1-basic/part1-basic.iml" />
       <module fileurl="file://$PROJECT_DIR$/part10-object/part10-object.iml" filepath="$PROJECT_DIR$/part10-object/part10-object.iml" />
