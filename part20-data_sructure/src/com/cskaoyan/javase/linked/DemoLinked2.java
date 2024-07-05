@@ -20,7 +20,8 @@ public class DemoLinked2 {
 
 
         //改造为循环链表
-
+        d.next = a;
+        a.pre = d;
 
         System.out.println(a);
 
@@ -45,7 +46,7 @@ class DBNode {
         return "DBNode{" +
                 "value='" + value + '\'' +
 //                ", pre=" + pre +
-                ", next=" + next +
+//                ", next=" + next +
                 '}';
     }
 }

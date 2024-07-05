@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/Mybatis/pom.xml" />
         <option value="$PROJECT_DIR$/Mybatis-dynamic-proxy/pom.xml" />
         <option value="$PROJECT_DIR$/jedis-demo/pom.xml" />
+        <option value="$PROJECT_DIR$/CoordTransform/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
