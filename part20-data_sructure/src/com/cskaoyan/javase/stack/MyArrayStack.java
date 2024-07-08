@@ -59,7 +59,26 @@ public class MyArrayStack <T> {
         return  newLen;
     }
     //pop
+    public T pop(){
+        if(isEmpty()){
+            throw new RuntimeException("stack is empty");
+        }
+        T oldValue = (T)objects[size -1];
+        //objects[size - 1] = null;
+        size --;
 
+        return oldValue;
+    }
+
+    public T peek(){
+        if(isEmpty()){
+            throw new RuntimeException("stack is empty");
+        }
+        return (T)objects[size - 1];
+    }
+    public boolean isEmpty(){
+        return size == 0;
+    }
     //remove
 
 }

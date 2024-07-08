@@ -14,5 +14,14 @@ public class Demo2 {
         stack.push("ls");
         stack.push("wu");
         System.out.println(stack);
+
+        String pop = stack.pop();
+        System.out.println(pop);
+
+        stack.push("zl");
+        String peek = stack.peek();
+        System.out.println(peek);
+        System.out.println(stack);
+
     }
 }
