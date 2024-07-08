@@ -25,7 +25,41 @@ public class MyArrayStack <T> {
         this.objects = new Object[initCapacity];
     }
     //push
+    public boolean push(T t){
+        //在添加方法中，考虑数组是否满了，满了就扩容
+        if(size == objects.length){
+            int newLen = getLen();//获取新的数组的长度
+            grow(newLen);//根据新数组的长度进行扩容
+        }
+        //核心逻辑
+        objects[size] = t;
+        size ++;
+        return true;
+    }
+
+    private void grow(int newLen) {
+        Object[] newObjects = new Object[newLen];
+        //把旧数组中的数据转移到新数组
+        for (int i = 0; i < objects.length; i++) {
+            newObjects[i] = objects[i];
+        }
+        objects = newObjects;
+    }
+
+    private int getLen() {
+        int oldLen = objects.length;
+        int newLen = oldLen * 2;
+        //之所以判断newLen < 0，是因为可能存在溢出情况，int类型溢出后，newLen的值可能为负
+        if(newLen < 0 || newLen > MAX_CAPACITY){
+            newLen = MAX_CAPACITY;
+        } else if (newLen == oldLen) {
+            throw new RuntimeException("newLen = oldLen");
+
+        }
+        return  newLen;
+    }
     //pop
+
     //remove
 
 }
