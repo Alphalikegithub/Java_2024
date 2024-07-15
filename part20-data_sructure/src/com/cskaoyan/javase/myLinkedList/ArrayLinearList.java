@@ -25,6 +25,11 @@ public class ArrayLinearList {
         //扩容一般是创建一个更大的新数组，将旧数组的元素复制到新数组中
         // 在数组的末尾添加新元素
         elements[size++] = element;//元素下标后移（尾插法）
+        //size++ 是后置递增运算符。后置递增运算符会先使用变量 size 当前的值，然后再对 size 进行自增。
+
+        /*//核心逻辑
+        elements[size] = element;
+        size ++;*/
     }
     public void remove(int index){
         if(index < 0 || index >= size){
