@@ -40,9 +40,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
 
-
     /**
      * 二叉搜索树的添加方法
+     *
      * @param value 要添加的值
      * @return 添加成功返回 true，如果值已存在则返回 false
      */
@@ -86,14 +86,14 @@ public class BinarySearchTree<T extends Comparable<T>> {
         return true;
     }
 
-    public  boolean isEmpty(){
+    public boolean isEmpty() {
         return size == 0;
     }
 
 
-
     /**
      * 二叉搜索树的删除方法
+     *
      * @param value 要删除的值
      * @return 删除成功返回 true，如果值不存在返回 false
      */
@@ -133,9 +133,9 @@ public class BinarySearchTree<T extends Comparable<T>> {
         if (current.left != null && current.right != null) {
             // 要删除的节点有两个子节点的情况
             /*
-            * 如果选择左子树的最大节点作为替换节点，则应该单独实现另外的逻辑来处理这种情况。
-            * 混合使用两种策略可能会导致代码结构复杂化，并增加错误的可能性，因此一般不建议这样做。
-            * */
+             * 如果选择左子树的最大节点作为替换节点，则应该单独实现另外的逻辑来处理这种情况。
+             * 混合使用两种策略可能会导致代码结构复杂化，并增加错误的可能性，因此一般不建议这样做。
+             * */
             // 找到右子树的最小节点替代要删除的节点
             Node minNode = current.right;
             Node minNodeParent = current;
@@ -167,8 +167,42 @@ public class BinarySearchTree<T extends Comparable<T>> {
         size--;
         return true;
     }
+
     /**
-     * 中序遍历二叉搜索树，返回所有节点的值的字符串表示
+     * 中序遍历二叉搜索树
+     * 1.定义一个标记结点，指向根结点
+     * 2.循环：若栈不为空或者标记结点不为null
+     * 2.1循环：如果标记结点不为null,把标记结点的left序列全部入栈
+     * 2.2出栈一个元素，放到list中
+     * 2.3把标记结点标记到出栈元素的right孩子上
+     */
+
+
+    public List<T> inorderTraversal1() {
+        //创建一个容器，保存遍历结果
+        LinkedList<T> list = new LinkedList<>();
+        //创建一个栈
+        MyArrayStack<Node> nodeMyArrayStack = new MyArrayStack<>();
+        //定义一个标记结点
+        Node current = root;
+        //2.循环：若栈不为空或者标记结点不为null
+        while (!nodeMyArrayStack.isEmpty() || current != null) {
+            //2.1循环：如果标记结点不为null,把标记结点的left序列全部入栈
+            while (current != null) {
+                nodeMyArrayStack.push(current);
+                current = current.left;
+            }
+            //2.2出栈一个元素，放到list中
+            Node pop = nodeMyArrayStack.pop();
+            list.add(pop.value);
+            //2.3把标记结点标记到出栈元素的right孩子上
+            current = pop.right;
+        }
+        return list;
+    }
+
+    /**
+     * 中序遍历二叉搜索树（递归实现），返回所有节点的值的字符串表示
      */
     public List<T> inorderTraversal() {
         LinkedList<T> list = new LinkedList<>();
@@ -177,7 +211,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     private void inorderTraversal(Node node, List<T> list) {
-        if (node != null)  {
+        if (node != null) {
             inorderTraversal(node.left, list);
             list.add(node.value);
             inorderTraversal(node.right, list);
@@ -185,7 +219,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
     }
 
     //层级遍历
-    public List<T> levelOrder(){
+    public List<T> levelOrder() {
         List<T> list = new LinkedList<>();
         //创建一个队列
         MyArrayQueue<Node> queue1 = new MyArrayQueue<>();
@@ -193,17 +227,17 @@ public class BinarySearchTree<T extends Comparable<T>> {
         //1.把根结点入队列
         queue1.enQueue(root);
         //2.循环（队列为空为止）
-        while (!queue1.isEmpty()){
+        while (!queue1.isEmpty()) {
             //出队列一个元素
             Node node = queue1.deQueue();
             //遍历
             list.add(node.value);
             //左右孩子入队列
-            if(node.left != null){
+            if (node.left != null) {
                 ///queue1.enQueue(node.left);
                 queue1.enQueue(node.left);
             }
-            if(node.right != null){
+            if (node.right != null) {
                 queue1.enQueue(node.right);
             }
         }
@@ -219,7 +253,7 @@ public class BinarySearchTree<T extends Comparable<T>> {
         left子结点先入栈
         right子结点后入栈
     * */
-    public List<T> postOrder(){
+    public List<T> postOrder() {
         //存储遍历结果的容器
         List<T> list = new LinkedList<>();
 
@@ -229,42 +263,75 @@ public class BinarySearchTree<T extends Comparable<T>> {
         nodeMyArrayStack.push(root);
 
         //2.循环（栈不空为止）
-        while(!nodeMyArrayStack.isEmpty()){
+        while (!nodeMyArrayStack.isEmpty()) {
             //出栈元素
             Node pop = nodeMyArrayStack.pop();
             //头插法遍历
             list.add(0, pop.value);
 
             //将刚才出栈结点的左右孩子入栈
-            if(pop.left != null){
+            if (pop.left != null) {
                 nodeMyArrayStack.push(pop.left);
             }
-            if(pop.right != null){
+            if (pop.right != null) {
                 nodeMyArrayStack.push(pop.right);
             }
         }
         return list;
     }
+
     /*
     * 后序遍历的顺序是：左子树 -> 右子树 -> 根节点。下面是详细的步骤：
     递归出口：如果当前节点 (node) 为空，直接返回。这是递归的结束条件，确保我们在遇到叶子节点的孩子（即 null）时不再继续递归。
     递归调用：对于每个节点，先递归遍历其左子树，然后递归遍历其右子树，最后处理当前节点（将其值添加到列表中）。
     * */
     //下面实现递归的后序遍历
-    private void postOrder2(Node node,List<T> list){
-        if(node == null){
+    private void postOrder2(Node node, List<T> list) {
+        if (node == null) {
             return; //递归出口
         }
         //后序遍历的遍历顺序： 左 右 根
-        postOrder2(node.left,list);//遍历左子树
-        postOrder2(node.right,list);//遍历右子树
+        postOrder2(node.left, list);//遍历左子树
+        postOrder2(node.right, list);//遍历右子树
         list.add(node.value);//处理当前节点
     }
 
     //写一个函数以调用上面的postOrder2()方法
-    public List<T> postOrder2(){
+    public List<T> postOrder2() {
         LinkedList<T> list = new LinkedList<>();
-        postOrder2(root,list);// 从根节点开始递归
+        postOrder2(root, list);// 从根节点开始递归
         return list; // 返回结果列表
+    }
+
+    //先序遍历二叉树（非递归实现）
+    public List<T> preorderTraversal() {
+        LinkedList<T> list = new LinkedList<>();
+        MyArrayStack<Node> nodeMyArrayStack = new MyArrayStack<>();
+        Node current = root;
+        while (!nodeMyArrayStack.isEmpty() || current != null) {
+            while (current != null) {
+                list.add(current.value);
+                nodeMyArrayStack.push(current);
+                current = current.left;
+            }
+            Node pop = nodeMyArrayStack.pop();
+            current = pop.right;
+        }
+        return list;
+    }
+    public List<T> preOrder(){
+        LinkedList<T> list = new LinkedList<>();
+        //从根结点开始递归
+        preOrder(root,list);
+        return list;
+    }
+    private void preOrder(Node root,List<T> list){
+        if(root == null){
+            return;//递归出口
+        }
+        //先序遍历的遍历顺序：根 左 右
+        list.add(root.value);
+        preOrder(root.left,list);
+        preOrder(root.right,list);
     }
 }

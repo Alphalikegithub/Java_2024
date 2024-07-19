@@ -17,7 +17,6 @@ public class Demo {
         tree.add(20);
         tree.add(1);
         tree.add(15);
-        tree.add(25);
         tree.add(10);
         tree.add(70);
         tree.add(300);
@@ -31,13 +30,16 @@ public class Demo {
         //tree.remove(100);
         System.out.println("tree = " + tree);
         // 打印二叉搜索树的所有节点
-        System.out.println("中序遍历 : " + tree.inorderTraversal());
+        System.out.println("中序遍历 : " + tree.inorderTraversal1());
+        System.out.println("中序遍历(递归实现) : " + tree.inorderTraversal());
 
         System.out.println("层序遍历 : " + tree.levelOrder());
 
         System.out.println("后序遍历 : " + tree.postOrder());
-
         System.out.println("后序遍历(递归实现) : " + tree.postOrder2());
+
+        System.out.println("先序遍历 : " + tree.preorderTraversal());
+        System.out.println("先序遍历(递归实现) : " + tree.preOrder());
     }
 
 }
