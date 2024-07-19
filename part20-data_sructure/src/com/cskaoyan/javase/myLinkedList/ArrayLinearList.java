@@ -61,4 +61,7 @@ public class ArrayLinearList {
         }
         System.out.println(); // 换行
     }
+    //二叉排序树
+    //二分查找树
+    /*所有节点的配置都应该放在 特殊的线性表中进行相应的处理 */
 }
