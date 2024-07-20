@@ -319,19 +319,139 @@ public class BinarySearchTree<T extends Comparable<T>> {
         }
         return list;
     }
-    public List<T> preOrder(){
+
+    public List<T> preOrder() {
         LinkedList<T> list = new LinkedList<>();
         //从根结点开始递归
-        preOrder(root,list);
+        preOrder(root, list);
         return list;
     }
-    private void preOrder(Node root,List<T> list){
-        if(root == null){
+
+    private void preOrder(Node root, List<T> list) {
+        if (root == null) {
             return;//递归出口
         }
         //先序遍历的遍历顺序：根 左 右
         list.add(root.value);
-        preOrder(root.left,list);
-        preOrder(root.right,list);
+        preOrder(root.left, list);
+        preOrder(root.right, list);
+    }
+
+    //先序+中序建树
+    //后序+中序建树
+    public void buildTreeByInAndPostOrder(List<T> inOrderList, List<T> postOrderList) {
+        root = buildTreeByInAndPostOrder2(inOrderList, postOrderList);
+        size = inOrderList.size();
+    }
+
+    /**
+     * 根据中序和后序递归建树
+     *
+     * @param inOrderList   给定的中序序列
+     * @param postOrderList 给定的后序序列
+     * @return Node 根据中序和后序所建成树的根结点
+     * @author alpha
+     * @since 2024/07/19 22:56
+     */
+    private Node buildTreeByInAndPostOrder2(List<T> inOrderList, List<T> postOrderList) {
+        //递归出口，如果中序和后序序列为空，直接返回null
+        if (inOrderList.isEmpty() || postOrderList.isEmpty()) {
+            return null;
+        }
+        //先获得根结点
+        T rootValue = postOrderList.get(postOrderList.size() - 1);
+        //获得根结点在中序序列中的位置
+        int rootIndex = inOrderList.indexOf(rootValue);//根据值找下标
+        /*
+         * left子树:
+         *   中序：0 - rootIndex - 1
+         *   后序：0 - rootIndex - 1
+         * */
+
+        /*
+         * right子树:
+         *   中序：rootIndex + 1 - inOrderList.size() - 1
+         *   后序：rootIndex - inOrderList.size() - 2
+         * */
+
+        /*从原本的中序和后序序列中切割出left子树的中序和后序*/
+        //获得左子树的中序序列
+        List<T> listLeftInorder = inOrderList.subList(0, rootIndex);
+        //获得左子树的后序序列
+        List<T> listLeftPostorder = postOrderList.subList(0, rootIndex);
+        //根据left子树的中序和后序，递归建立left子树
+        Node left = buildTreeByInAndPostOrder2(listLeftInorder, listLeftPostorder);
+
+        /*从原本的中序和后序序列中切割出right子树的中序和后序*/
+        //获得右子树的中序序列
+        List<T> listRightInorder = inOrderList.subList(rootIndex + 1, inOrderList.size());
+        //获得右子树的后序序列
+        List<T> listRightPostorder = postOrderList.subList(rootIndex, postOrderList.size() - 1);
+        //根据right子树的中序和后序，递归建立right子树
+        Node right = buildTreeByInAndPostOrder2(listRightInorder, listRightPostorder);
+
+        //构建当前的根结点
+        Node node;
+        node = new Node(rootValue, left, right);
+
+        return node;
+    }
+
+    //根据前序和中序递归建树
+    public void buildTreeByInAndPreOrder(List<T> inOrderList, List<T> preOrderList) {
+        root = buildTreeByInAndPreOrder2(inOrderList, preOrderList);
+        size = inOrderList.size();
+    }
+
+    /**
+     * 根据前序和中序递归建树
+     *
+     * @param inOrderList  给定的中序序列
+     * @param preOrderList 给定的前序序列
+     * @return Node 根据前序和中序所建成树的根结点
+     * @author alpha
+     * @since 2024/07/19 23:42
+     */
+    private Node buildTreeByInAndPreOrder2(List<T> inOrderList, List<T> preOrderList) {
+        //递归出口，如果中序和前序序列为空，直接返回null
+        if (inOrderList.isEmpty() || preOrderList.isEmpty()) {
+            return null;
+        }
+        //先获得根结点
+        T rootValue = preOrderList.get(0);
+        //获得根结点在中序序列中的位置
+        int rootIndex = inOrderList.indexOf(rootValue);//根据值找下标
+        /*
+         * left子树:
+         *   中序：0 - rootIndex - 1
+         *   前序：1 - rootIndex
+         * */
+
+        /*
+         * right子树:
+         *   中序：rootIndex + 1 - inOrderList.size() - 1
+         *   前序：rootIndex + 1
+         * */
+
+        /*从原本的中序和前序序列中切割出left子树的中序和前序*/
+        //获得左子树的中序序列
+        List<T> listLeftInorder = inOrderList.subList(0, rootIndex);
+        //获得左子树的前序序列
+        List<T> listLeftPreorder = preOrderList.subList(1, rootIndex + 1);
+        //根据left子树的中序和前序，递归建立left子树
+        Node left = buildTreeByInAndPreOrder2(listLeftInorder, listLeftPreorder);
+
+        /*从原本的中序和前序序列中切割出right子树的中序和前序*/
+        //获得右子树的中序序列
+        List<T> listRightInorder = inOrderList.subList(rootIndex + 1, inOrderList.size());
+        //获得右子树的前序序列
+        List<T> listRightPreorder = preOrderList.subList(rootIndex + 1, preOrderList.size());
+        //根据right子树的中序和前序，递归建立right子树
+        Node right = buildTreeByInAndPreOrder2(listRightInorder, listRightPreorder);
+
+        //构建当前的根结点
+        Node node;
+        node = new Node(rootValue, left, right);
+        return node;
     }
 }
