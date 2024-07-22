@@ -1,4 +1,4 @@
-package com.cskaoyan;
+package com.cskaoyan.javase.collection;
 
 /**
  * @author alpha
@@ -8,7 +8,9 @@ package com.cskaoyan;
  **/
 
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -128,6 +130,37 @@ public class DemoCollection1 {
             System.out.print(" ");
 
         }
+        System.out.println("---------------------------------------------");
+        //注意：
+        //<T> T[]	toArray(T[] a)虽然是个泛型方法（从语法角度上，传任意类型的的数组都是可以的），但是在实际运行的时候，只有这个数组类型传正确，才能正常运行
+
+        //获得一个迭代器
+        Iterator<String> iterator = collection.iterator();
+        boolean b = iterator.hasNext();//判断后面还有没有元素可以遍历
+        System.out.println(b);
+
+        System.out.println("iterator.next() = " + iterator.next());
+        System.out.println("iterator.next() = " + iterator.next());
+        boolean b1 = iterator.hasNext();//判断后面还有没有元素可以遍历
+        System.out.println(b1);
+//        System.out.println("iterator.next() = " + iterator.next());
+//        System.out.println("iterator.next() = " + iterator.next());
+
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+        for(int i = 0; i < 100; i ++){
+            for(int j = 1; i < 2 * j -1;j++){
+                System.out.println(i + j);
+            }
+        }
+        Collection<String> collection1 = new LinkedList<>();
+        ArrayList<Integer> list = new ArrayList<>();
+        //集合类中的特殊方法
+        while(list.isEmpty()){
+            //联系常见的语法以及相应的参数处理
+        }
+
 
 // -------------------------------- 集合类中的特殊方法 --------------------------------
 
@@ -135,6 +168,7 @@ public class DemoCollection1 {
 //    Object[]	toArray()返回一个包含此集合中所有元素的数组。
 //    <T> T[]	toArray(T[] a)返回包含此集合中所有元素的数组;返回的数组的运行时类型是指定数组的运行时类型。
     }
+
 
 
 }

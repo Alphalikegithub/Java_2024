@@ -1,4 +1,4 @@
-package com.cskaoyan;
+package com.cskaoyan.javase.collection;
 
 import java.util.Collection;
 import java.util.Iterator;

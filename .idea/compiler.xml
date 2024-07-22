@@ -8,7 +8,6 @@
         <outputRelativeToContentRoot value="true" />
         <module name="part11-string" />
         <module name="part15-thread" />
-        <module name="part21-collection" />
         <module name="mysql-JDBC" />
         <module name="CoordTransform" />
         <module name="jedis-demo" />
@@ -17,6 +16,7 @@
     <bytecodeTargetLevel>
       <module name="Mybatis" target="1.8" />
       <module name="Mybatis-dynamic-proxy" target="1.8" />
+      <module name="part21-collection" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
