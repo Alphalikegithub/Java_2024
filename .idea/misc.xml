@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/jedis-demo/pom.xml" />
         <option value="$PROJECT_DIR$/CoordTransform/pom.xml" />
         <option value="$PROJECT_DIR$/part21-collection/pom.xml" />
+        <option value="$PROJECT_DIR$/part21-collectionClasses/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

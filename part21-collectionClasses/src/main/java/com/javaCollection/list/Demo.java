@@ -1,4 +1,4 @@
-package com.cskaoyan.javase.list;
+package com.javaCollection.list;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -42,5 +42,10 @@ public class Demo {
 
         List<String> list1 = list.subList(1, 3);
         System.out.println(list1);
+
+        System.out.println(
+                "下面的代码写的有点冗余，这样表述起来其实是没有什么意义的"
+        );
+
     }
 }
